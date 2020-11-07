@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let grades = [
+        [78, 85],
+        [99, 87, 68],
+        [89, 79, 92, 85, 96]
+    ];
+    let total = 0;
+    let average = 0;
+    for (let row = 0; row < grades.length; row++) {
+        for (let col = 0; col < grades[row].length; col++) {
+            total += grades[row][col];
+        }
+        average = total / grades[row].length;
+        console.log('student ' + (row + 1) + ' average ' + average.toFixed(2))
+        total = 0;
+        average = 0;
+    }
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let nums = [1, 2, 3, 4, 5]
+    // reverse()方法将数组中元素的顺序进行翻转
+    // nums.reverse(); //[5, 4, 3, 2, 1]
+    // console.log(nums)
+    // 数组排序 如果元素时字符串类型 sort()方法按照转换为的字符串的各个字符的Unicode位点进行排序。
+    // 参数 compareFunction 可选 用来指定按某种顺序进行排列的函数。
+    //返回值 排序后的数组。请注意，数组已原地排序，并且不进行复制。
+    let friends = ['joey', 'chandler', 'ross', 'monica', 'rachel', 'phoebe'];
+    friends.sort(); //["chandler", "joey", "monica", "phoebe", "rachel", "ross"]
+    console.log(friends)
+    let nums = [10, 7, 8, 6, 9, 3];
+
+    function compare(num1, num2) {
+        return num1 - num2 //数组元素升序排序
+    }
+    let numsSort = nums.sort(compare)
+    console.log(nums)
+    console.log(numsSort)
+</script>
+
+</html>

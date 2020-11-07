@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // push()方法会将一个元素添加到数组末尾
+    /* let nums = [1, 2, 3, 4, 5]
+    nums.push(6)
+    nums[nums.length] = 7
+    console.log(nums) */
+    let nums = [2, 3, 4, 5]
+    let newnum = 1;
+    let numsLen = nums.length; //4
+    // 如果不使用数组提供的可变函数，则新的元素添加进来后，需把后面的每个元素都相应地向后移一个位置
+    for (let i = numsLen; i >= 0; --i) {
+        nums[i] = nums[i - 1] //nums[undefined, 2, 3, 4, 5]
+    }
+    // unshift()方法可以将元素添加在数组的开头
+    nums.unshift(0,newnum)
+    console.log(nums)
+</script>
+
+</html>

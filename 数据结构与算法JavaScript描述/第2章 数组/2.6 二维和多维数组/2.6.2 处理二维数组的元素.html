@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let grades = [
+        [89, 78, 98],
+        [86, 87, 96],
+        [97, 78, 93]
+    ]
+    let total = 0;
+    let average = 0.0;
+    // 处理二维数组中的元素，两种最基本的方式：按列访问和按行访问。
+    // 计算该学生的平均成绩。
+    /* for (let row = 0; row < grades.length; row++) {
+        for (let col = 0; col < grades[row].length; col++) {
+            total += grades[row][col];
+        }
+        average = total / grades[row].length; //88.33 89.67 89.33
+        console.log('student ' + parseInt(row + 1) + ' average ' + average.toFixed(2))
+        total = 0;
+        average = 0.0;
+    } */
+    // 计算一个学生各科的平均成绩
+    for (let col = 0; col < grades.length; col++) {
+        for (let row = 0; row < grades[col].length; row++) {
+            console.log(row + ":" + col, grades[row][col])
+            total += grades[row][col];
+        }
+        average = total / grades[col].length; //90.67 81.00 95.67
+        console.log('student ' + parseInt(col + 1) + ' average ' + average.toFixed(2))
+        total = 0;
+        average = 0.0;
+    }
+</script>
+
+</html>

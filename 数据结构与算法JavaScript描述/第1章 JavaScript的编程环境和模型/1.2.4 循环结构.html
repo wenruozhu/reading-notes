@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // while循环求和
+    var number = 1;
+    var sum = 0;
+    while (number < 11) {
+        sum += number
+            ++number;
+    }
+    console.log('while循环求和', sum);
+    // for循环求和
+    for (var i = 1; i < 11; i++) {
+        sum += i
+    }
+    console.log('for循环求和', sum)
+    // 使用for循环访问数组
+    var numbers = [3, 8, 28, 38, 88]
+    for (var i = 0, len = numbers.length; i < len; i++) {
+        sum += numbers[i]
+    }
+    console.log('for循环访问数组', sum);
+</script>
+
+</html>

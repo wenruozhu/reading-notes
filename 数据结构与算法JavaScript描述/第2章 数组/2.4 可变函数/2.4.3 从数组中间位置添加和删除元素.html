@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // splice()方法添加或删除元素，需提供如下参数：
+    // 起始索引（也就是你希望开始添加/删除元素的地方）；
+    // 需要删除的元素个数（添加元素时该参数设为 0）；
+    // 想要添加进数组的元素。
+    let nums = [1, 2, 3, 7, 8, 9];
+    let newElements = [4, 5, 6];
+    nums.splice(3, 0, ...newElements)
+    console.log(nums)
+    nums.splice(3,2)
+    console.log(nums)
+</script>
+
+</html>

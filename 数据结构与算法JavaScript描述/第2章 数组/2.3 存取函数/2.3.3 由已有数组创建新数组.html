@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // concat()方法可以合并多个创建一个新数组。
+    /* let actor = ['joey', 'chandler', 'ross'];
+    let actress = ['monica', 'rachel', 'phoebe']
+    let friends = actor.concat(actress);
+    console.log(friends);
+    friends = actress.concat(actor)
+    console.log(friends); */
+    // splice()方法从现有数组里截取一个新数组。第一个参数是截取的起始索引，第二个参数是截取的长度
+    let friends = ['joey', 'chandler', 'ross', 'monica', 'rachel', 'phoebe'];
+    let actress = friends.splice(3, 3); //["monica", "rachel", "phoebe"]
+    let actor = friends //["joey", "chandler", "ross"]
+    console.log(actress,actor)
+</script>
+
+</html>

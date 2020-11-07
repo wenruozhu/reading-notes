@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 有返回值的函数
+    function factorial(number) {
+        var product = 1;
+        for (let i = number; i >= 1; i--) {
+            product *= i
+        }
+        return product
+    }
+    console.log(factorial(3))
+    console.log(factorial(6))
+    console.log(factorial(10))
+    // JavaScript中的子程或者void函数
+    function curve(arr, amount) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] += amount
+        }
+    }
+    let grades = [77, 72, 83, 88, 91]
+    curve(grades, 5)
+    console.log(grades)
+</script>
+
+</html>
