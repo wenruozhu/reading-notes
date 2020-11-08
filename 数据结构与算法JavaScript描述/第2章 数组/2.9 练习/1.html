@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 创建一个记录学生成绩的对象，提供一个添加成绩的方法。以及一个显示学生平均成绩的方法。
+    function Grades() {
+        this.gradesStore = [];
+        console.log(add)
+        this.add = add
+        console.log(average)
+        this.average = average
+    }
+
+    function add(grade) {
+        this.gradesStore.push(grade)
+    }
+
+    function average() {
+        let total = 0;
+        for (let i = 0, len = this.gradesStore.length; i < len; i++) {
+            total += this.gradesStore[i];
+        }
+        return total / this.gradesStore.length;
+    }
+    let grade = new Grades();
+    grade.add(70)
+    grade.add(80)
+    grade.add(90)
+    console.log(grade.average())
+</script>
+
+</html>
