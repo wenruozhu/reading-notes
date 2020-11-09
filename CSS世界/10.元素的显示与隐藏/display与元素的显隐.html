@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bg1{
+            background: url(./img/1.jpg);
+        }
+        div{
+            width: 640px;
+            height: 640px;
+        }
+        .bg2{
+            background: url(./img/2.jpg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 本身背景图所在元素隐藏，则图片依旧加载。 -->
+    <div hidden class="bg1"></div>
+    <!-- 父元素隐藏，图片不加载。 -->
+    <div class="father" hidden>
+        <div class="bg2"></div>
+    </div>
+</body>
+
+</html>

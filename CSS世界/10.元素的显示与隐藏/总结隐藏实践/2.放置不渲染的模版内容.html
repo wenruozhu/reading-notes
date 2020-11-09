@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script type="text/html">
+    <img src="../img/1.jpg" alt="">
+    <textarea id="textarea">
+        <img src="../img/2.jpg" alt="">
+        <img src="../img/3.jpg" alt="">
+    </textarea>
+</script>
+<script>
+    let scriptValue = document.getElementsByTagName('script')[0].innerHTML;
+    // let textareaValue = scriptValue.getElementsByTagName('textarea');
+    // console.log(textareaValue);
+    let body = document.body;
+    body.innerHTML = scriptValue;
+    
+</script>
+</html>

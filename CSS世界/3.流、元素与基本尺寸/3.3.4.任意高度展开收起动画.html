@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .btn{
+            width: 120px;
+            height: 60px;
+            margin-bottom: 20px;
+            background-color: orange;
+        }
+        .box{
+            width: 100px;
+            max-height: 0;
+
+            overflow: hidden;
+            transition: max-height .8s;
+            background-color: skyblue;
+        }
+        .box.cur{
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn"></div>
+    <div class="box">
+        <p>888888</p>
+        <p>888888</p>
+        <p>888888</p>
+        <p>888888</p>
+        <p>888888</p>
+        <p>888888</p>
+        <!-- <p>888888</p> -->
+        <!-- <p>888888</p> -->
+    </div>
+</body>
+<script>
+    function $(selector){
+        return document.getElementsByClassName(selector);
+    }
+    console.log($);
+    var box = $("box")[0],
+        btn = $("btn")[0];
+        // console.dir(box);
+        btn.onclick = function (){
+            console.log(this);
+            if(box.classList.contains('cur')){
+                box.classList.remove('cur');
+            }else{
+                box.classList.add('cur');
+            }
+        }
+</script>
+</html>
