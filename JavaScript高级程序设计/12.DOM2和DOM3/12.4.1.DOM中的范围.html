@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"><b>Hello</b> World!</p>
+</body>
+<script>
+    /* 确定浏览器是否支持范围 */
+    var supportsRange = document.implementation.hasFeature('Range','2.0');
+    var alsoSupportsRange = (typeof document.createRange == 'function');
+    console.log(supportsRange, alsoSupportsRange);
+    var range1 = document.createRange(),
+        range2 = document.createRange(),
+        p1 = document.getElementById('p1');
+        console.log(range1.selectNode(p1));
+</script>
+</html>

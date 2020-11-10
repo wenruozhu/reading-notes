@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+</body>
+<script>
+    /* 1.DocumentType类型的变化 */
+    console.log(document.doctype.publicId);
+    console.log(document.doctype.systemId);
+    /* 2.Document类型的变化 */
+    var oldNode = document.getElementsByTagName('ul')[0];
+        newNode = document.importNode(oldNode,true);
+        document.body.appendChild(newNode);
+    // 确定文档的归属窗口
+    var parentWindow = document.defaultView || document.parentWindow;
+    console.log(parentWindow);
+    // 创建一个完整的HTML文档
+    var htmldoc = document.implementation.createHTMLDocument("New Doc");
+    console.log(htmldoc);
+    console.log(htmldoc.title);
+    console.log(typeof htmldoc.body);
+    console.log(htmldoc.body);
+    /* 3.Node类型的变化 */
+    /* if(document.body.isSupported("HTML","2.0")){
+        console.log("支持DOM2.0");
+    } */
+    var div1 = document.createElement('div');
+    div1.setAttribute("class","box");
+    var div2 = document.createElement('div');
+    div2.setAttribute("class","box");
+    console.log(div1.isSameNode(div1));
+    console.log(div1.isEqualNode(div2));
+    console.log(div1.isSameNode(div2));
+    // 添加额外数据
+    /* document.body.setUserData("name","joey",function () {
+        console.log('ok');
+    }) */
+    // 4.框架的变化
+    
+</script>
+</html>

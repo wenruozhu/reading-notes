@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span>this is span tag</span>
+</body>
+<script>
+    var span = document.getElementsByTagName('span')[0];
+        attr = document.createAttribute("align");
+        attr.value = "center";
+        span.setAttributeNode(attr);
+    console.log(span.attributes["align"].value);
+    console.log(span.getAttribute("align"))
+    console.log(span.getAttributeNode("align").value);
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: skyblue;
+        }
+
+        table thead {
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    var body = document.getElementsByTagName('body')[0],
+        table = document.createElement('table'),
+        thead = document.createElement('thead'),
+        tbody = document.createElement('tbody'),
+        tr = document.createElement('tr');
+    tr.innerText = "九九乘法表";
+    thead.appendChild(tr);
+    table.appendChild(thead);
+    // table.border = 1;
+    table.width = '100%';
+    for (var i = 1; i <= 9; i++) {
+        var tr = document.createElement('tr');
+        for (var j = 1; j <= i; j++) {
+            var td = document.createElement('td');
+            td.innerHTML = j + " " + "*" + " " + i + " " + "=" + " " + i * j;
+            tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    body.appendChild(table);
+</script>
+
+</html>

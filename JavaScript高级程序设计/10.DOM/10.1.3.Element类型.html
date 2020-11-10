@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="my-div" align="left" style="width: 800px;height:600px;background-color:orange" onclick="fn()">111</div>
+    <div class="div-item"></div>
+    <ul id="myList">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</body>
+<script>
+    /* 1.HTML元素 */
+    var div = document.getElementById('my-div');
+    console.log(div.tagName);
+    console.log(div.tagName == div.nodeName);
+    /* 2.取得特性 */
+    console.log(div.getAttribute('id'));
+    console.log(div.getAttribute('align'));
+    console.log(div.getAttribute('style'));
+    console.log(div.style);
+
+    function fn() {
+        console.log(this);
+    }
+    console.log(div.getAttribute('onclick'));
+    console.log(div.onclick);
+    /* 3.设置特性 */
+    div.setAttribute('class', 'my-div');
+    // div.removeAttribute('id');
+    /* 4.attributes */
+    var className = div.attributes.getNamedItem('class').nodeValue;
+    console.log(className);
+    div.attributes['class'].nodeValue = 'someOtherClass';
+    var oldAttr = div.attributes.removeNamedItem('id');
+    console.log(oldAttr);
+
+    function outputAttributes(element) {
+        var pairs = new Array,
+            attrName,
+            attrValue,
+            i,
+            len;
+        for (i = 0, len = element.attributes.length; i < len; i++) {
+            attrName = element.attributes[i].name;
+            attrValue = element.attributes[i].nodeValue;
+            // element.attributes[i].specified 返回指定的特性
+            if (element.attributes[i].specified) {
+                pairs.push(attrName + "=\"" + attrValue + "\"");
+            }
+            console.log(pairs[i])
+        }
+        return pairs.join(" ");
+    }
+    console.log(outputAttributes(div));
+    /* 5.创建元素 */
+    var createDiv = document.createElement('div');
+    createDiv.id = "myNewDiv";
+    createDiv.className = "box"
+    document.body.appendChild(createDiv);
+    /* 6.元素的子节点 */
+    var myList = document.getElementById('myList'),
+        lis = myList.childNodes,
+        liArr = [];
+    for (var i = 0, len = lis.length; i < len; i++) {
+        console.log(lis[i]);
+        if (lis[i].nodeType == 1){
+            liArr.push(lis[i]);
+        }
+    }
+    console.log(liArr);
+</script>
+
+</html>

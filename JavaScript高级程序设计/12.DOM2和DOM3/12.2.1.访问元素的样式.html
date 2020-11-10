@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myDiv{
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv" style="background-color: orange;border:10px solid skyblue;"></div>
+</body>
+<script>
+    // 确定浏览器能力
+    var supportsDOM2CSS = document.implementation.hasFeature("css", "2.0");
+    var supportsDOM2CSS2 = document.implementation.hasFeature("css2", "2.0");
+    console.log(supportsDOM2CSS, supportsDOM2CSS2);
+    var myDiv = document.getElementById("myDiv");
+    /* myDiv.style.backgroundColor = "orange";
+    myDiv.style.width = "300px";
+    myDiv.style.height = "200px";
+    myDiv.style.border = "10px solid skyblue";
+    myDiv.style.borderRadius = "30px"; */
+    /* 1.DOM样式属性和方法*/
+    console.log(myDiv.style);
+    console.log(myDiv.style.cssText);
+    console.log(myDiv.style.length);
+    console.log(myDiv.style.parentRule);
+    console.log(myDiv.style.getPropertyPriority("padding"));
+    console.log(myDiv.style.getPropertyValue('width'));
+    console.log(myDiv.style.item(0));
+    console.log(myDiv.style.removeProperty('background-color'));
+    console.log(myDiv.style.setProperty('background-color', 'pink', 'important'));
+    console.log('for循环下的输出内容。')
+    console.log('获取属性名');
+    for (var i = 0, len = myDiv.style.length; i < len; i++) {
+        console.log(myDiv.style[i]);
+    }
+    console.log('获取属性名和属性值');
+    for (var i = 0, len = myDiv.style.length; i < len; i++) {
+        var propertyName = myDiv.style[i],
+            PropertyValue = myDiv.style.getPropertyValue(propertyName);
+        console.log(propertyName + ":" + PropertyValue);
+    }
+    /* getPropertyCSSValue */
+    console.log('getPropertyCSSValue 已废弃');
+    var prop, value, i, len;
+    for (var i = 0, len = myDiv.style.length; i < len; i++) {
+        prop = myDiv.style[i];
+        value = myDiv.style.getPropertyValue(prop);
+        // console.log(propertyName + ":" + value.cssText + "(" + value.cssValueTyoe + ")");
+    }
+    /* 2.计算的样式 */
+    var computedStyle = document.defaultView.getComputedStyle(myDiv,null);
+    console.log(computedStyle.backgroundColor);
+    console.log(computedStyle.width);
+    console.log(computedStyle.height);
+    console.log(computedStyle.border);
+</script>
+
+</html>

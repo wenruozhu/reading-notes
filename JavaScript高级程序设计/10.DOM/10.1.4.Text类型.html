@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text">php是世界上最好的语言！</div>
+</body>
+<script>
+    var textDiv = document.querySelector('.text'),
+        text = document.querySelector('.text').childNodes[0];
+    console.log(text.nodeType);
+    console.log(text.nodeName);
+    console.log(text.nodeValue);
+    console.log(text.parentNode);
+    text.data = "php,JavaScript是世界上最好的语言";
+    var text1 = "，不接受任何反驳！";
+    var text2 = "js";
+    text.appendData(text1);
+    text.deleteData(0, 4);
+    text.replaceData(0, 10, text2);
+    text.splitText(2);
+    console.log(textDiv.childNodes);
+    /* 1.创建文本节点 */
+    var element = document.createElement('div');
+    element.className = 'message';
+    var textNode = document.createTextNode('hello world!');
+    element.appendChild(textNode);
+    // 多个文本子节点
+    var anotherTextNode = document.createTextNode('wow!')
+    element.appendChild(anotherTextNode);
+    document.body.appendChild(element);
+    /* 2.规范化文本节点 */
+    console.log(element.childNodes.length);
+    element.normalize();
+    console.log(element.childNodes.length);
+    console.log(element.firstChild.nodeValue);
+    /* 3.分割文本节点 */
+    var newNode = element.firstChild.splitText(12);
+    console.log(element.firstChild.nodeValue);
+    console.log(newNode.nodeValue);
+    console.log(element.childNodes.length);
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.box {
+            width: 300px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    /* 1.CSS规则 */
+    var sheet = document.styleSheets[0],
+        rules = sheet.cssRules || sheet.rules,
+        rule = rules[0];
+    console.log(rule.selectorText);
+    console.log(rule.style.cssText);
+    console.log(rule.style.width);
+    console.log(rule.style.height);
+    console.log(rule.style.backgroundColor);
+    rule.style.backgroundColor = "skyblue";
+    /* 2.创建规则 */
+    // sheet.insertRule("body {background: orange}",0);
+    // sheet.insertRule(".box {border-radius:10px solid orange}",0);
+    function insertRule(sheet, selectorText, cssText, position) {
+        if (sheet.insertRule) {
+            sheet.insertRule(selectorText + "{" + cssText + "}", position);
+        } else if (sheet.addRule) {
+            sheet.addRule(selectorText, cssText, position);
+        }
+    }
+    insertRule(document.styleSheets[0], 'body', "background-color:orange", 0);
+    /* 3.删除规则 */
+    sheet.removeRule(0);
+</script>
+
+</html>

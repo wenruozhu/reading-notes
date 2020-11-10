@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body><!-- this is a comment --></body>
+<script>
+    var body = document.body,
+        comment = body.firstChild;
+    console.log(comment.nodeType);
+    console.log(comment.nodeName);
+    console.log(comment.nodeValue);
+    console.log(comment.data);
+    // 创建注释节点
+    var createComment = document.createComment('a comment');
+    body.appendChild(createComment);
+</script>
+
+</html>

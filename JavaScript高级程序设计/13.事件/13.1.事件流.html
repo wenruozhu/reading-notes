@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点我换成橙色背景颜色</button>
+    <button>点我换成天蓝色背景颜色</button>
+    <button>点我换成粉色背景颜色</button>
+</body>
+<script>
+    var btn = document.getElementsByTagName('button'),
+        colorArr = ['orange', 'skyblue', 'pink'];
+    for (let i = 0, btnLen = btn.length; i < btnLen; i++) {
+        console.log(btn[i]);
+        btn[i].addEventListener('click', function () {
+            console.log(i);
+            document.body.style.backgroundColor = colorArr[i];
+        }, false);
+    }
+</script>
+
+</html>

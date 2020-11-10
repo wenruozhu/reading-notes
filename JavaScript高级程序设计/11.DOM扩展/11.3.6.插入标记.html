@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <p>this is p tag</p>
+    </div>
+</body>
+<script>
+    /* 1.innerHTML属性 */
+    var box = document.getElementsByClassName('box')[0],
+        p_tag = box.getElementsByTagName('p')[0];
+    console.log(box.innerHTML);
+    var span = document.createElement('span'),
+        b = document.createElement('b');
+    span.innerText = "this is a span tag";
+    b.innerText = "this is a b tag";
+
+    box.appendChild(span);
+    /* 2.outerHTML */
+    console.log(box.outerHTML);
+    // box.outerHTML = "<p>this is a paragraph</p>"
+    /* 3.insertAdjacentHTML */
+    p_tag.insertAdjacentHTML('beforebegin', "<p>beforebegin</p>");
+    p_tag.insertAdjacentHTML('afterbegin', "<p>afterbegin</p>");
+    p_tag.insertAdjacentHTML('beforeend', "<p>beforeend</p>");
+    p_tag.insertAdjacentHTML('afterend', "<p>afterend</p>");
+    p_tag.insertAdjacentElement('beforebegin', b)
+    /* 4.内存与性能问题 */
+    var ul = document.createElement('ul'),
+        itemsHtml = '';
+    for (var i = 1; i < 9; i++) {
+        itemsHtml += "<li>item"+i+"</li>";
+    }
+    console.log(itemsHtml);
+    ul.innerHTML = itemsHtml;
+    box.appendChild(ul);
+</script>
+
+</html>

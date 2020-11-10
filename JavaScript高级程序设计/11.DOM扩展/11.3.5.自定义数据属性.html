@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv" data-appid="88" data-myname="joey"></div>
+</body>
+<script>
+    var myDiv = document.getElementById('myDiv'),
+        appId = myDiv.dataset.appid,
+        myName = myDiv.dataset.myname;
+    // console.log(appId,myName);
+    myDiv.dataset.appid = '888';
+    myDiv.dataset.myname = 'jack';
+    console.dir(myDiv);
+    console.log(myDiv.dataset.appid);
+    console.log(myDiv.dataset.myname);
+</script>
+</html>

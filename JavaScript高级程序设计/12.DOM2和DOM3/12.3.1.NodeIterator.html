@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <p><b>Hello</b> world!</p>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+    </div>
+</body>
+<script>
+    /* NodeIterator */
+    /* var filter = {
+        acceptNode: function (node) {
+            return node.tagName.toLowerCase() == "p" ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        }
+    };
+    var root = document.documentElement;
+    var iterator = document.createNodeIterator(root, NodeFilter.SHOW_ELEMENT, filter, false);
+    console.log(iterator); */
+    var div = document.getElementById('div1');
+    /* 使用过滤器 */
+    var filter = function (node) {
+        return node.tagName.toLowerCase() == 'li' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+    var iterator = document.createNodeIterator(div, NodeFilter.SHOW_ELEMENT, filter, false);
+    // var iterator = document.createNodeIterator(div, NodeFilter.SHOW_ELEMENT, null, false);
+    console.log(iterator);
+    var node = iterator.nextNode();
+
+    /* 遍历选中元素中的所有元素 */
+    while(node != null){
+        console.log(node.tagName);
+        node = iterator.nextNode();
+    }
+</script>
+
+</html>

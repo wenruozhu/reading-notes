@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>item1</div>
+    <div>item2</div>
+    <div>item3</div>
+</body>
+<script>
+    var divs = document.getElementsByTagName('div'),
+        i,
+        len,
+        div;
+    for (var i = 0, len = divs.length; i < len; i++) {
+        div = document.createElement('div');
+        div.innerText = "item" + (i+4);
+        document.body.appendChild(div);
+    }
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item {
+            flex: 1;
+            height: 300px;
+            line-height: 300px;
+            list-style: none;
+            text-align: center;
+            background-color: skyblue;
+        }
+
+        .item.cur {
+            background-color: orange;
+        }
+
+        .item.cur.disabled {
+            background-color: gray;
+        }
+        button{
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item">item</li>
+        <li class="item cur">item</li>
+        <li class="item cur disabled">item</li>
+    </ul>
+    <button>add</button>
+    <button>contains</button>
+    <button>remove</button>
+    <button>toggle</button>
+</body>
+<script>
+    var items = document.getElementsByClassName('item'),
+        item1 = items[0],
+        item2 = items[1],
+        item3 = items[2],
+        buttons = document.querySelectorAll('button'),
+        add = buttons[0],
+        contains = buttons[1],
+        remove = buttons[2],
+        toggle = buttons[3];
+        add.addEventListener('click',function () {
+            item1.classList.add('cur');
+        })
+        contains.addEventListener('click',function () {
+            var boolean =  item2.classList.contains('disabled');
+            console.log(boolean)
+        })
+        remove.addEventListener('click',function () {
+            item2.classList.remove('cur');
+        })
+        toggle.addEventListener('click',function () {
+            item3.classList.toggle('disabled');
+        })
+</script>
+</html>

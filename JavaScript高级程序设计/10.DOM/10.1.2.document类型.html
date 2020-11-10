@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="my-div">some text</div>
+    <div class="img">
+        <img src="../img/china.jpg" name="myImage" alt="">
+    </div>
+</body>
+<script>
+    var document = document;
+    console.log(document.nodeType);
+    console.log(document.nodeName);
+    console.log(document.nodeValue);
+    console.log(document.parentNode);
+    console.log(document.ownerDocument);
+    console.log(document.childNodes);
+    /* 1.文档子节点 */
+    var html = document.documentElement;
+    console.log(html == document.childNodes[1]);
+    console.log(html == document.firstChild);
+    var body = document.body;
+    body.style.background = 'orange';
+    var doctype = document.doctype;
+    console.log(doctype);
+    /* 2.文档信息 */
+    var originalTitle = document.title;
+    document.title = 'document类型';
+    // 取得完整的URL
+    var url = document.URL;
+    console.log(url);
+    // 取得域名
+    var domain = document.domain;
+    console.log(domain);
+    // 取得来源页面的URL
+    var referrer = document.referrer;
+    console.log(referrer);
+    /* 3.查找元素 */
+    var div = document.getElementById('my-div');
+    console.log(div.innerText);
+    div.innerText = 'this is a div tag';
+    // HTMLCollection
+    var image = document.getElementsByTagName('img');
+    console.log(image);
+    console.log(image.length);
+    console.log(image[0].src);
+    console.log(image.item(0).src);
+    var myImage = image.namedItem('myImage');
+    var myImage = image['myImage'];
+    console.log(myImage);
+    /* 6.文档写入 */
+    document.write("<strong>"+ (new Date()) +"</strong>");
+    window.onload = function () {
+        // document.open();
+        // document.write("Hello world!");
+        document.close();
+    }
+</script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent-node>* {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent-node">
+        <h6>this is a title tag</h6>
+        <p>this is a paragraph tag</p>
+        <span></span>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+</body>
+<script>
+    /* 1.节点类型&节点名称 */
+    var p_tag = document.getElementsByTagName('p')[0];
+    console.log(p_tag.nodeType == Node.ELEMENT_NODE);
+    console.log(p_tag.nodeType);
+    if (p_tag.nodeType == 1) {
+        console.log(p_tag.nodeName);
+    }
+    /* 2.节点关系 */
+    var parentNode = document.getElementsByClassName('parent-node')[0];
+    console.log(parentNode);
+
+    var firstChild = parentNode.childNodes[0];
+    console.log(firstChild);
+    var secondChild = parentNode.childNodes.item(1);
+    console.log(secondChild);
+    var count = parentNode.childNodes.length;
+    console.log(count);
+    console.log(typeof (parentNode.childNodes));
+    var childNodesToArr = Array.prototype.slice.call(parentNode.childNodes, 0);
+    console.log(childNodesToArr);
+    var span_tag = document.getElementsByTagName('span')[0];
+    console.log(span_tag.hasChildNodes());
+    console.log(span_tag.ownerDocument);
+    console.log(p_tag.ownerDocument);
+    /* 3.操作节点 */
+    // appendChild
+    var newNode1 = document.createElement('label');
+    newNode1.innerText = 'this is label tag';
+    newNode1.setAttribute('for', 'name');
+    var appendChildNode = parentNode.appendChild(newNode1);
+    console.log(newNode1 == appendChildNode);
+    console.log(parentNode.lastChild == newNode1);
+    // insertBefore
+    var newNode2 = document.createElement('b');
+    newNode2.innerText = 'insertBefore text';
+    var insertBeforeNode = parentNode.insertBefore(newNode2, null);
+    console.log(insertBeforeNode == parentNode.lastChild);
+    var returnedNode = parentNode.insertBefore(newNode2, parentNode.firstChild);
+    console.log(returnedNode == parentNode.firstChild);
+    // replaceChild
+    var newNode3 = document.createElement('a');
+    newNode3.innerText = 'replaceChild text';
+    var replaceChildNode = parentNode.replaceChild(newNode3, parentNode.firstChild);
+    // removeChild
+    var removeFirstChild = parentNode.removeChild(parentNode.firstChild);
+    // cloneNode
+    var myList = document.getElementsByTagName('ul')[0];
+    var deepList = myList.cloneNode(true);
+    parentNode.appendChild(deepList);
+    // normalize方法
+    deepList.childNodes.normalize();
+    console.log(deepList.childNodes.length);
+    var shallowList = myList.cloneNode(false);
+    console.log(shallowList.childNodes.length);
+    parentNode.appendChild(shallowList);
+</script>
+
+</html>
