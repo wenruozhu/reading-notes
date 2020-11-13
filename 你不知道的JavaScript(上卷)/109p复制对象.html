@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function anotherFunction() {
+            
+        }
+        var anotherObject = {
+            c: true
+        };
+        var anotherArray = [];
+        var myObject = {
+            a: 2,
+            b: anotherObject,
+            c: anotherArray,
+            d: anotherFunction
+        };
+        anotherArray.push(anotherObject,myObject);
+        console.log(anotherArray);
+    </script>
+</body>
+</html>

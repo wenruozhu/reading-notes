@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myArray = ["foo",28,"bar"];
+        myArray.baz = "baz";
+        console.log(myArray.length);
+        console.log(myArray.baz);
+        // 数组添加属性，属性名看起来像一个数字，变成数值下标。
+        myArray["3"] = "baz";
+        myArray[4] = "fn";
+        console.log(myArray.length);
+        console.log(myArray[3]);
+        console.log(myArray);
+    </script>
+</body>
+</html>

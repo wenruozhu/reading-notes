@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2.configurable
+        var myObject1 = {
+            a: 2
+        }
+        delete myObject1.a
+        // myObject1.a = 6;
+        console.log(myObject1.a);
+        Object.defineProperty(myObject1,"a",{
+            value: 8,
+            writable: true,
+            configurable: false,
+            enumerable:true
+        })
+        delete myObject1.a;
+        // 除了无法修改这个属性，configurable:false 还会禁止删除这个属性。
+        console.log(myObject1.a);
+        myObject1.a = 5;
+        console.log(myObject1.a);
+        Object.defineProperty(myObject1,"a",{
+            value: 6,
+            writable: false,
+            configurable: false,
+            enumerable: true
+        })
+        console.log(Object.getOwnPropertyDescriptor(myObject1,"a"))
+        // configurable值为false是单向操作，不可撤销。
+    </script>
+</body>
+</html>

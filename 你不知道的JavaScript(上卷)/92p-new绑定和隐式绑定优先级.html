@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(something) {
+            this.a = something;
+        }
+        var obj1 = {
+            foo:foo
+        }
+        var obj2 = {};
+        obj1.foo(2);
+        console.log(obj1.a);
+        obj1.foo.call(obj2,3);
+        console.log(obj2.a);
+        var bar = new obj1.foo(4);
+        console.log(obj1.a);
+        console.log(bar.a);
+        // new绑定优先级高于隐式绑定
+    </script>
+</body>
+</html>

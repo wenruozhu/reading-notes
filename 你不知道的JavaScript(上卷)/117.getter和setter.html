@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var myObject = {
+            get a() {
+                return 2;
+            }
+        };
+        Object.defineProperty(
+            myObject,
+            "b", {
+                get: function () {
+                    return this.a * 2
+                },
+                enumerable: true
+            }
+        )
+        console.log(myObject.a);
+        console.log(myObject.b);
+        console.log(myObject);
+    </script>
+</body>
+
+</html>

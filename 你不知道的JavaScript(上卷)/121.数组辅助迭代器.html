@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myArray = [1,2,3],
+            myObject = {
+                a: 2,
+                b: 3
+            }
+        myArray.forEach(function (item,index) {
+            console.log(item);
+        })
+        for(var v of myArray) {
+            console.log(v)
+        }
+        var it = myArray[Symbol.iterator]();
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        Object.defineProperty(myObject, Symbol.iterator, {
+            enumerable: false,
+            writable: false,
+            configurable: true,
+            value: function () {
+                var o = this;
+                var idx = 0;
+                var ks = Object.keys(o);
+                return {
+                    value: o[ks[idx++]],
+                    done: (idx > ks.length)
+                }
+            }
+        })
+        var it = myObject[Symbol.iterator]();
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+        for(var obj of myObject){
+            console.log(obj)
+        }
+    </script>
+</body>
+</html>

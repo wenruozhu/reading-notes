@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // "use strict"
+        var myObject = {};
+        // 1.对象常量
+        Object.defineProperty(myObject, "FAVORITE_NUMBER", {
+            value: 28,
+            writable: false,
+            configurable: false
+        })
+        console.log(myObject.FAVORITE_NUMBER);
+        // 2.禁止扩展
+        var myObject1 = {
+            a: 2
+        }
+        Object.preventExtensions(myObject1);
+        myObject1.b = 2;
+        console.log(myObject1);
+        // 3.密封
+        var myObject2 = {
+            b: 3
+        }
+        myObject2.b = 8;
+        Object.seal(myObject2);
+        delete myObject2.b;
+        console.log(myObject2);
+        //密封之后不仅不能添加新属性，也不能重新配置或者删除任何现有属性(虽然可以 修改属性的值)。
+        // 4.冻结
+        Object.freeze()
+        //Object.freeze(..) 会创建一个冻结对象，这个方法实际上会在一个现有对象上调用 Object.seal(..) 并把所有“数据访问”属性标记为 writable:false，这样就无法修改它们 的值。
+    </script>
+</body>
+
+</html>
