@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 心理预期价格
+        const spending_threshold = 200;
+        // 税率
+        const tax_rate = 0.08;
+        const phone_price = 99.99;
+        // 附件价格
+        const accessory_price = 9.99;
+        let bank_balance = prompt('请输入你的银行存款');
+        let amount = 0;
+        function calTax(amount) {
+            return amount * tax_rate;
+        }
+        function formatAmount(amount) {
+            return '$' + amount.toFixed(2);
+        }
+        while(amount < bank_balance){
+            amount = amount + phone_price;
+            if(amount < spending_threshold){
+                amount += accessory_price;
+            } 
+        }
+        // 交税
+        amount = amount + calTax(amount);
+        console.log("Your purchase(购买金额：)" + formatAmount(amount));
+        if(amount > bank_balance){
+            console.log("You can't afford this purchase.;")
+        }else{
+            console.log("enjoy!")
+        }
+    </script>
+</body>
+</html>
