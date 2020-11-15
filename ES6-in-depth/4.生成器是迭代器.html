@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    class RangeIterator {
+        constructor(start, stop) {
+                this.value = start;
+                this.stop = stop;
+            }
+            [Symbol.iterator]() {
+                return this;
+            }
+        next() {
+            var value = this.value;
+            if (value < this.stop) {
+                this.value++;
+                // console.log(this.value)
+                return {
+                    done: false,
+                    value: value
+                }
+            } else {
+                return {
+                    done: true,
+                    value: undefined
+                }
+            }
+        }
+    }
+
+    function range(start, stop) {
+        return new RangeIterator(start, stop)
+    }
+    const iter = range(1, 3);
+    console.log(iter.next())
+    console.log(iter.next())
+    console.log(iter.next())
+</script>
+
+</html>

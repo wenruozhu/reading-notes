@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 遍历数组
+    const friends = ['joey', 'chandler', 'ross', 'rachel', 'monica', 'phoebe']
+    for (const people of friends) {
+        console.log(people)
+    }
+    // 遍历字符串
+    const china = 'china'
+    for (const spell of china) {
+        console.log(spell)
+    }
+    let words = ['apple', 'boy', 'cat', 'cat', 'dog', 'boy']
+    const uniqueWords = new Set(words);
+    for (const word of uniqueWords) {
+        console.log(word)
+    }
+    let computer = {
+        name: 'MacBook Pro',
+        size: '13',
+        color: 'gray'
+    }
+    // 迭代对象
+    for (const key of Object.keys(computer)) {
+        console.log(key + ':'+ computer[key]);
+    }
+</script>
+
+</html>
