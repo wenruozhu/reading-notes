@@ -28,7 +28,7 @@
             });
         }
         // 运行示例
-        var URL = "http://httpbin.org/status/500";
+        var URL = "http://jsonplaceholder.typicode.com/users";
         getURL(URL).then(function onFulfilled(value) {
             console.log(value);
         }).catch(function onRejected(error) {
