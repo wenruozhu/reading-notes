@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const obj = {
+        tag: 'div',
+        children: [
+            { tag: 'span', children: 'hello world' }
+
+        ]
+    }
+    function Render(obj, root) {
+        console.log('tag', obj.tag)
+        const el = document.createElement(obj.tag)
+        if (typeof obj.children === "string") {
+            const text = document.createTextNode(obj.children)
+            el.appendChild(text)
+        } else if (obj.children) {
+            // 数组，递归调用 Render，使用 el 作为 root 参数
+            obj.children.forEach((child) => Render(child, el));
+        }
+        root.appendChild(el)
+    }
+    Render(obj, document.body)
+</script>
+
+</html>
